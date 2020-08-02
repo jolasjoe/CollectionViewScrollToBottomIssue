@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private let numberOfSections = 10
+    private let numberOfSections = 30
     private let numberOfItemsInEachSection = 4
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //MARK: ISSUE -> scrollToItem not scrolling to 4th item of 10th section. If I remove headers it's working fine.
-        collectionView.scrollToItem(at: IndexPath(row: numberOfItemsInEachSection - 1, section: numberOfSections - 1), at: .bottom, animated: true)
+        collectionView.scrollToItem(at: IndexPath(row: numberOfItemsInEachSection - 1, section: numberOfSections - 1), at: .bottom, animated: false)
         print("CONTENTSIZE: \(collectionView.contentSize)")
     }
 }
